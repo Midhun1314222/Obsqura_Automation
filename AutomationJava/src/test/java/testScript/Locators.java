@@ -29,10 +29,18 @@ public class Locators extends Base {
 		
 	}
 	public void linkText() {
+		WebElement simpleformdemo=driver.findElement(By.linkText("Simple Form Demo"));
+		WebElement checkboxdemo=driver.findElement(By.linkText("Checkbox Demo"));
+		WebElement radiobuttonsdemo=driver.findElement(By.linkText("Radio Buttons Demo"));
+		WebElement formsubmit=driver.findElement(By.linkText("Form Submit"));
 		
 	}
 	public void partialLinkText() {
 		
+		WebElement simplefor=driver.findElement(By.partialLinkText("Simple Form"));
+		WebElement checkbox=driver.findElement(By.partialLinkText("Checkbox"));
+		WebElement radiobuttons=driver.findElement(By.partialLinkText("Radio Buttons"));
+		WebElement form=driver.findElement(By.partialLinkText("Form"));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
