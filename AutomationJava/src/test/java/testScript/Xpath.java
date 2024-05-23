@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class Xpath extends Base {
 	
-	public void xPath() {
+	public void basicXpath() {
 		//xpath  //tag[@attribute='value']
 		driver.findElement(By.xpath("//div[@id='message-two']"));
 		driver.findElement(By.xpath("//select[@id='single-input-field']"));
@@ -44,7 +44,7 @@ public class Xpath extends Base {
 		// TODO Auto-generated method stub
 		Xpath xpath=new Xpath();
 		xpath.initializeBrowser();
-		xpath.xPath();
+		xpath.basicXpath();
 		xpath.cointains();
 		xpath.startsWith();
 		xpath.text();
