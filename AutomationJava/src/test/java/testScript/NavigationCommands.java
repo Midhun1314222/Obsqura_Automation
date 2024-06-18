@@ -12,7 +12,7 @@ public class NavigationCommands extends Base {
 		// TODO Auto-generated method stub
 		NavigationCommands navigationcommands=new NavigationCommands();
 		navigationcommands.initializeBrowser();
-		navigationcommands.navigationCommands();
+		//navigationcommands.navigationCommands();
 		//navigationcommands.driverQuitAndClose();
 
 	}
