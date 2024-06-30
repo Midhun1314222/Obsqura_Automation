@@ -19,7 +19,7 @@ public class AdminUserSearchPage {
 	    @FindBy(xpath = "//input[@id='un']")private WebElement userNameField;
 	    @FindBy(xpath = "//select[@id='ut']")private WebElement userTypeDropdown;
 	    @FindBy(xpath = "//button[@value='sr']")private WebElement findUserBtn;
-	    @FindBy(xpath = "//div[contains(@class, 'table-responsive')]")private WebElement searchResults;
+	    @FindBy(xpath = "//div[contains(@class,'table-responsive')]")private WebElement searchResults;
 
 	    public void clickOnAdminUsersBtn() {
 	        adminUsersBtn.click();

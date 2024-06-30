@@ -21,12 +21,12 @@ public class AddNewPageTest extends Base {
 	        managePage.clickOnManagePageBtn();
 	        managePage.clickOnCreateNewBtn();
 	        managePage.enterTitle("Cars");
-	        //managePage.enterDescription("uygweudgud");
+	        managePage.enterDescription("uygweudgud");
 	        managePage.enterPage("caarsss");
 	        managePage.clickOnSubmitBtn();
 	        
 	        boolean isManagePageAvailable = managePage.isManagePageLoaded();
-	        assertTrue(isManagePageAvailable, "Manage page not loaded when user clicks on Manage Page button");
+	        assertTrue(isManagePageAvailable, "New page was ot created successfully");
 
 	    }
 }

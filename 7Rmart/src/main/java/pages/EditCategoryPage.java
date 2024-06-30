@@ -22,6 +22,8 @@ public class EditCategoryPage {
 	    @FindBy(xpath = "//input[@name='top_menu' and @value='yes']")private WebElement showOnTopRadioBtn;
 	    @FindBy(xpath = "//input[@name='show_home' and @value='no']")private WebElement showOnLeftRadioBtn;
 	    @FindBy(xpath = "//button[@type='submit']")private WebElement submitBtn;
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
+
 
 	    public void clickOnCategoryBtn() {
 	        categoryBtn.click();
@@ -55,5 +57,8 @@ public class EditCategoryPage {
 
 	    public void clickOnSubmitBtn() {
 	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitBtn);
+	    }
+	    public boolean isCategoryEdited() {
+	        return successMessage.isDisplayed();
 	    }
 }

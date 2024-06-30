@@ -33,8 +33,6 @@ public class FileUploadAssignment extends Base {
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
 		Robot r=new Robot();
 		r.delay(250);
-
-
 		r.keyPress(KeyEvent.VK_ENTER);
 	        r.keyRelease(KeyEvent.VK_ENTER);
 	        r.keyPress(KeyEvent.VK_CONTROL);

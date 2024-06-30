@@ -16,10 +16,10 @@ public class ManagePage {
     @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-page' and @class='small-box-footer']")private WebElement managePageBtn;
     @FindBy(xpath = "//a[@onclick='click_button(1)']")private WebElement createNewBtn;
     @FindBy(xpath = "//input[@id='title']")private WebElement titleField;
-    @FindBy(xpath = "//textarea[@role='textbox']")private WebElement descField;
+    @FindBy(xpath = "//div[@role='textbox']")private WebElement descField;
     @FindBy(xpath = "//input[@id='page']")private WebElement page;
     @FindBy(xpath = "//button[@type='submit']")private WebElement submitBtn;
-    @FindBy(xpath = "/html/body/div[1]/div[1]/div[2]/div/div")WebElement managePageHeader;
+    @FindBy(xpath = "//div[contains(@class,'alert-success')]")WebElement successMessage;
 
     public void clickOnManagePageBtn() {
         managePageBtn.click();
@@ -45,6 +45,6 @@ public class ManagePage {
         submitBtn.click();
     }
     public boolean isManagePageLoaded() {
-        return managePageHeader.isDisplayed();
+        return successMessage.isDisplayed();
     }
 }

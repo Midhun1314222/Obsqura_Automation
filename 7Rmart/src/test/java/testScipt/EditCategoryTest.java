@@ -1,5 +1,7 @@
 package testScipt;
 
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import pages.EditCategoryPage;
@@ -30,10 +32,8 @@ public class EditCategoryTest extends Base {
 	        editCategoryPage.clickOnShowOnTopRadioBtn();
 	        editCategoryPage.clickOnShowOnLeftRadioBtn();
 	        editCategoryPage.clickOnSubmitBtn();
-
-	        // Add assertion for category edit success if applicable
-	        // For example:
-	        // boolean isCategoryEdited = editCategoryPage.isCategoryEditedSuccessfully();
-	        // assertTrue(isCategoryEdited, "Category was not edited successfully");
+	        
+	        boolean isCategoryEditedSuccess = editCategoryPage.isCategoryEdited();
+	        assertTrue(isCategoryEditedSuccess, "Category was not edited successfully");
 	    }
 }

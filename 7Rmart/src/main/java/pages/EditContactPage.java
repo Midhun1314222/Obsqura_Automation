@@ -22,7 +22,7 @@ public class EditContactPage {
 	    @FindBy(xpath = "//textarea[@name='del_time']")private WebElement editDeliveryTime;
 	    @FindBy(xpath = "//input[@id='del_limit']")private WebElement editLimit;
 	    @FindBy(xpath = "//button[@name='Update']")private WebElement submitButton;
-	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div/div/div[1]/text()")private WebElement editContactSuccess;
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement editContactSuccess;
 
 	    public void clickOnMoreInfoButton() {
 	        moreInfoBtn.click();

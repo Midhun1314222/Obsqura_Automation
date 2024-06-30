@@ -16,7 +16,7 @@ public class AdminUserChangeStatusPage {
 
 	    @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")private WebElement adminUsersBtn;
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[2]/div/div[3]/div[2]/table/tbody/tr[1]/td[5]/a[1]")private WebElement actionBtn;
-	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[2]/div/div[1]")private WebElement changeStatusSuccess;
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement changeStatusSuccess;
 
 	    public void clickOnAdminUsersBtn() {
 	        adminUsersBtn.click();

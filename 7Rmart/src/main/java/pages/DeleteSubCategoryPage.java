@@ -15,7 +15,7 @@ public class DeleteSubCategoryPage {
 
 	    @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category' and @class='small-box-footer']")private WebElement subCategoryLink;
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[4]/div[2]/table/tbody/tr[1]/td[5]/a[2]")private WebElement deleteBtn;
-	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[2]/div/div/text()")private WebElement deleteSubCategorySuccess;
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement deleteSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
 	        subCategoryLink.click();

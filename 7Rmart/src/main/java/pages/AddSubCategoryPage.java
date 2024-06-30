@@ -21,7 +21,7 @@ public class AddSubCategoryPage {
 	    @FindBy(xpath = "//input[@id='subcategory']")private WebElement subCategoryField;
 	    //@FindBy(xpath = "//input[@type='file']")private WebElement fileUploadField;
 	    @FindBy(xpath = "//button[@type='submit']")private WebElement submitBtn;
-	    @FindBy(xpath = "/html/body/div[1]/div[1]/div[2]/div/div/text()")private WebElement addSubCategorySuccess;
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
 	        subCategoryLink.click();

@@ -33,7 +33,7 @@ public class AddNewAdminUserPage {
 	    @FindBy(xpath = "//button[@name='Create']")
 	    private WebElement saveBtn;
 
-	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[2]/div/div[1]")
+	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")
 	    private WebElement addUserSuccess;
 
 	    public void clickOnAdminUsersBtn() {
