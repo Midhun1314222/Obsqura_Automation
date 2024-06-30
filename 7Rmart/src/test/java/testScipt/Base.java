@@ -1,4 +1,4 @@
-package testScript3;
+package testScipt;
 
 import java.time.Duration;
 
@@ -14,7 +14,7 @@ public class Base {
 		driver=new ChromeDriver();//loading the driver
 		//driver.get("https://www.amazon.in/");//launch the URL
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://selenium.qabible.in/");//launch the URL
+		driver.get("https://groceryapp.uniqassosiates.com/admin/login");//launch the URL
 		driver.manage().window().maximize();
 	}
 	@AfterMethod
