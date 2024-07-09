@@ -2,16 +2,20 @@ package testScipt;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pages.EditCategoryPage;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class EditCategoryTest extends Base {
 	   @Test
-	    public void verifyUserIsAbleToEditCategory() {
-	        String usernameVal = "admin";
-	        String passwordVal = "admin";
+	    public void verifyUserIsAbleToEditCategory() throws IOException {
+		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
+	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
+	        
 	        String editedCategoryName = "Cars";
 	       //String imagePath = "D:\\cars.jpeg";
 

@@ -9,5 +9,10 @@
   		<artifactId>AutomationJava</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.obsqura</groupId>
+  		<artifactId>MavenProject</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

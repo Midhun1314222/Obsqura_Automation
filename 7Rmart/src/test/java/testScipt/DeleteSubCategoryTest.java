@@ -2,16 +2,19 @@ package testScipt;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pages.DeleteSubCategoryPage;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class DeleteSubCategoryTest extends Base {
     @Test
-    public void verifyUserIsAbleToDeleteSubcategory() {
-        String usernameVal = "admin";
-        String passwordVal = "admin";
+    public void verifyUserIsAbleToDeleteSubcategory() throws IOException {
+    	 String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
+         String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
 
         LoginPage loginPage = new LoginPage(driver);
 
