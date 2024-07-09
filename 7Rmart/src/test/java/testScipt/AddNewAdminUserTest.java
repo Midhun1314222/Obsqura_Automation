@@ -18,7 +18,7 @@ public class AddNewAdminUserTest extends Base {
 	        
 	        String newUserName = "midhunnand";
 	        String newPassword = "midhunnand451";
-	         String newUserType = "admin";
+	        String newUserType = "admin";
 
 	        LoginPage loginPage = new LoginPage(driver);
 
