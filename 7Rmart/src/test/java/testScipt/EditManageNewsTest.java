@@ -6,14 +6,15 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.EditManageNewsPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class EditManageNewsTest extends Base {
 	  @Test
-	    public void verifyUserIsAbleToEditNews() throws IOException {
-		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
+	    public void verifyUserIsAbleToEditNews(){
+		    String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
 	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
 	        
 	        String editedNewsContent = "Edited News";

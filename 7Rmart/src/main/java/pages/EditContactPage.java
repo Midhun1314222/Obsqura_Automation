@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class EditContactPage {
 	  WebDriver driver;
 
@@ -25,40 +27,40 @@ public class EditContactPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement editContactSuccess;
 
 	    public void clickOnMoreInfoButton() {
-	        moreInfoBtn.click();
+	        PageUtility.click(moreInfoBtn);
 	    }
 
 	    public void clickOnActionButton() {
-	        actionBtn.click();
+	        PageUtility.click(actionBtn);
 	    }
 
 	    public void enterPhoneNumber(String phoneNumber) {
-	        editPhone.clear();
-	        editPhone.sendKeys(phoneNumber);
+	        PageUtility.clearAndSendKeys(editPhone, phoneNumber);
+
 	    }
 
 	    public void enterEmail(String email) {
-	        editEmail.clear();
-	        editEmail.sendKeys(email);
+	        PageUtility.clearAndSendKeys(editEmail, email);
+
 	    }
 	    
-	    public void enterAddress(String editAddress) {
-	        editEmail.clear();
-	        editEmail.sendKeys(editAddress);
+	    public void enterAddress(String address) {
+	        PageUtility.clearAndSendKeys(editAddress, address);
+
 	    }
 	    
-	    public void enterDeliveryTime(String editDeliveryTime) {
-	        editEmail.clear();
-	        editEmail.sendKeys(editDeliveryTime);
+	    public void enterDeliveryTime(String deliveryTime) {
+	        PageUtility.clearAndSendKeys(editDeliveryTime, deliveryTime);
+
 	    }
 
 	    public void enterDeliveryLimit(String deliveryLimit) {
-	        editLimit.clear();
-	        editLimit.sendKeys(deliveryLimit);
+	        PageUtility.clearAndSendKeys(editLimit, deliveryLimit);
+
 	    }
 
 	    public void clickOnSubmitButton() {
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
+	        PageUtility.clickElementByJS(driver, submitButton);
 	    }
 
 	    public boolean isContactEdited() {

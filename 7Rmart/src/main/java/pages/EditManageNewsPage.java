@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class EditManageNewsPage {
 	  WebDriver driver;
 
@@ -20,20 +22,19 @@ public class EditManageNewsPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
 
 	    public void clickOnManageNewsBtn() {
-	        manageNewsBtn.click();
+	        PageUtility.click(manageNewsBtn);
 	    }
 
 	    public void clickOnEditBtn() {
-	        editBtn.click();
+	        PageUtility.click(editBtn);
 	    }
 
 	    public void enterEditedNews(String news) {
-	        newsTextArea.clear();
-	        newsTextArea.sendKeys(news);
+	        PageUtility.clearAndSendKeys(newsTextArea, news);
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        submitBtn.click();
+	        PageUtility.click(submitBtn);
 	    }
 
 	    public boolean isNewsEditedSuccessfully() {

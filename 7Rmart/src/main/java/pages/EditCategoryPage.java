@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class EditCategoryPage {
 	   WebDriver driver;
 
@@ -26,16 +28,16 @@ public class EditCategoryPage {
 
 
 	    public void clickOnCategoryBtn() {
-	        categoryBtn.click();
+	        PageUtility.click(categoryBtn);
 	    }
 
 	    public void clickOnEditBtn() {
-	        editBtn.click();
+	        PageUtility.click(editBtn);
 	    }
 
 	    public void enterEditedCategory(String categoryName) {
-	        editedCategory.clear();
-	        editedCategory.sendKeys(categoryName);
+	        PageUtility.clearAndSendKeys(editedCategory, categoryName);
+
 	    }
 
 	    /*public void clickOnDeleteImage() {
@@ -48,15 +50,15 @@ public class EditCategoryPage {
 	    }*/
 
 	    public void clickOnShowOnTopRadioBtn() {
-	        showOnTopRadioBtn.click();
+	        PageUtility.click(showOnTopRadioBtn);
 	    }
 
 	    public void clickOnShowOnLeftRadioBtn() {
-	        showOnLeftRadioBtn.click();
+	        PageUtility.click(showOnLeftRadioBtn);
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitBtn);
+	        PageUtility.clickElementByJS(driver, submitBtn);
 	    }
 	    public boolean isCategoryEdited() {
 	        return successMessage.isDisplayed();

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManagePage {
     WebDriver driver;
 
@@ -22,27 +24,27 @@ public class ManagePage {
     @FindBy(xpath = "//div[contains(@class,'alert-success')]")WebElement successMessage;
 
     public void clickOnManagePageBtn() {
-        managePageBtn.click();
+        PageUtility.click(managePageBtn);
     }
 
     public void clickOnCreateNewBtn() {
-        createNewBtn.click();
+        PageUtility.click(createNewBtn);
     }
 
     public void enterTitle(String title) {
-        titleField.sendKeys(title);
+        PageUtility.sendKeys(titleField, title);
     }
 
     public void enterDescription(String description) {
-        descField.sendKeys(description);
+        PageUtility.sendKeys(descField, description);
     }
 
     public void enterPage(String pageName) {
-        page.sendKeys(pageName);
+        PageUtility.sendKeys(page, pageName);
     }
 
     public void clickOnSubmitBtn() {
-        submitBtn.click();
+        PageUtility.click(submitBtn);
     }
     public boolean isManagePageLoaded() {
         return successMessage.isDisplayed();

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class DeleteSubCategoryPage {
 	  WebDriver driver;
 
@@ -18,12 +20,12 @@ public class DeleteSubCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement deleteSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
-	        subCategoryLink.click();
+	        PageUtility.click(subCategoryLink);
 	    }
 
 	    public void clickOnDeleteButton() {
-	        deleteBtn.click();
-	        driver.switchTo().alert().accept();
+	    	 PageUtility.click(deleteBtn);
+	         PageUtility.acceptAlert(driver);
 	    }
 
 	    public boolean isSubcategoryPageDeleted() {

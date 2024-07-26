@@ -1,8 +1,6 @@
 package utilities;
 
 import java.io.FileInputStream;
-import java.io.IOException;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -15,7 +13,8 @@ public class ExcelUtility {
     static XSSFWorkbook w;
     static XSSFSheet sh;
 
-    public static String getStringData(int rowIndex, int columnIndex, String sheetName) throws IOException {
+    public static String getStringData(int rowIndex, int columnIndex, String sheetName){
+    	try {
         String filepath = Constants.TestDataFile;
         f = new FileInputStream(filepath);
         w = new XSSFWorkbook(f);
@@ -23,9 +22,14 @@ public class ExcelUtility {
         Row r = sh.getRow(rowIndex);
         Cell c = r.getCell(columnIndex);
         return c.getStringCellValue();
+    	}
+    	catch(Exception e) {
+    		throw new RuntimeException("Excel sheet not found");
+    	}
     }
 
-    public static String getIntegerData(int rowIndex, int columnIndex, String sheetName) throws IOException {
+    public static String getIntegerData(int rowIndex, int columnIndex, String sheetName){
+    	try {
         String filepath = Constants.TestDataFile;
         f = new FileInputStream(filepath);
         w = new XSSFWorkbook(f);
@@ -34,5 +38,9 @@ public class ExcelUtility {
         Cell c = r.getCell(columnIndex);
         double numericCellValue = c.getNumericCellValue();
         return String.valueOf((int) numericCellValue);
+    	}
+    	catch(Exception e) {
+    		throw new RuntimeException("Excel sheet not found");
+    	}
     }
 }

@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class EditContactTest extends Base {
 	 @Test
-	    public void verifyUserIsAbleToEditContact() throws IOException {
+	    public void verifyUserIsAbleToEditContact(){
 		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
 	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
 	        
