@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.AddSubCategoryPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -13,9 +14,9 @@ import utilities.ExcelUtility;
 public class AddSubCategoryTest extends Base {
 	
      @Test
-	 public void verifyUserIsAbleToAddSubcategory() throws IOException {
-	        String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
-	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
+	 public void verifyUserIsAbleToAddSubcategory(){
+	        String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
+	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        
 	        String subCategoryName = "Iphone 15 pro";
 	        //String filePath = "D:\\iphone-15-pro-finish-select-202309-6-1inch-blacktitanium.jpeg";

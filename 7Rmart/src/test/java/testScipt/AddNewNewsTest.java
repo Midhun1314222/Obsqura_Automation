@@ -6,15 +6,16 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.AddNewNewsPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class AddNewNewsTest extends Base {
 	 @Test
-	    public void verifyUserIsAbleToAddNewNews() throws IOException {
-		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
-	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
+	    public void verifyUserIsAbleToAddNewNews(){
+		    String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
+	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        
 	        String newsContent = "Test News";
 

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class AddNewNewsPage {
 	 WebDriver driver;
 
@@ -20,19 +22,19 @@ public class AddNewNewsPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
 
 	    public void clickOnManageNewsBtn() {
-	        manageNewsBtn.click();
+	        PageUtility.click(manageNewsBtn);
 	    }
 
 	    public void clickOnAddNewNewsBtn() {
-	        addNewNewsBtn.click();
+	        PageUtility.click(addNewNewsBtn);
 	    }
 
 	    public void enterNews(String news) {
-	        newsTextArea.sendKeys(news);
+	        PageUtility.sendKeys(newsTextArea, news);
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        submitBtn.click();
+	        PageUtility.click(submitBtn);
 	    }
 
 	    public boolean isNewsAddedSuccessfully() {

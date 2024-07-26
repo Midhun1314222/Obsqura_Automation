@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class AdminUserSearchPage {
 	  WebDriver driver;
 
@@ -22,24 +24,24 @@ public class AdminUserSearchPage {
 	    @FindBy(xpath = "//div[contains(@class,'table-responsive')]")private WebElement searchResults;
 
 	    public void clickOnAdminUsersBtn() {
-	        adminUsersBtn.click();
+	        PageUtility.click(adminUsersBtn);
 	    }
 
 	    public void clickOnSearchBtn() {
-	        searchBtn.click();
+	        PageUtility.click(searchBtn);
 	    }
 
 	    public void enterUserName(String userName) {
-	        userNameField.sendKeys(userName);
+	        PageUtility.clearAndSendKeys(userNameField, userName);
 	    }
 
 	    public void selectUserType(String userType) {
-	        Select select = new Select(userTypeDropdown);
-	        select.selectByValue(userType);
+	        PageUtility.selectByValue(userTypeDropdown, userType);
+
 	    }
 
 	    public void clickOnFindUserBtn() {
-	        findUserBtn.click();
+	        PageUtility.click(findUserBtn);
 	    }
 
 	    public boolean isSearchResultsDisplayed() {

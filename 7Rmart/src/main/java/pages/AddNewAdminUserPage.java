@@ -1,11 +1,10 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
+import utilities.PageUtility;
 
 public class AddNewAdminUserPage {
 	  WebDriver driver;
@@ -37,28 +36,27 @@ public class AddNewAdminUserPage {
 	    private WebElement addUserSuccess;
 
 	    public void clickOnAdminUsersBtn() {
-	        adminUsersBtn.click();
+	        PageUtility.click(adminUsersBtn);
 	    }
 
 	    public void clickOnAddNewBtn() {
-	        addNewBtn.click();
+	        PageUtility.click(addNewBtn);
 	    }
 
 	    public void enterUserName(String userName) {
-	        userNameField.sendKeys(userName);
+	        PageUtility.sendKeys(userNameField, userName);
 	    }
 
 	    public void enterPassword(String password) {
-	        passwordField.sendKeys(password);
+	        PageUtility.sendKeys(passwordField, password);
 	    }
 
 	    public void selectUserType(String userType) {
-	        Select select = new Select(userTypeDropdown);
-	        select.selectByValue(userType);
+	        PageUtility.selectByValue(userTypeDropdown, userType);
 	    }
 
 	    public void clickOnSaveBtn() {
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", saveBtn);
+	        PageUtility.clickElementByJS(driver, saveBtn);
 	    }
 
 	    public boolean isUserAddedSuccess() {

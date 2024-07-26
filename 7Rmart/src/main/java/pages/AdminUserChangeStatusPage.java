@@ -1,10 +1,11 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.PageUtility;
 
 public class AdminUserChangeStatusPage {
 	 WebDriver driver;
@@ -19,11 +20,11 @@ public class AdminUserChangeStatusPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement changeStatusSuccess;
 
 	    public void clickOnAdminUsersBtn() {
-	        adminUsersBtn.click();
+	        PageUtility.click(adminUsersBtn);
 	    }
 
 	    public void clickOnActionBtn() {
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", actionBtn);
+	        PageUtility.clickElementByJS(driver, actionBtn);
 	    }
 
 	    public boolean isStatusChangedSuccess() {

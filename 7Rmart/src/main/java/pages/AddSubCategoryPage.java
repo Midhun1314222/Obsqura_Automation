@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class AddSubCategoryPage {
 
 	 WebDriver driver;
@@ -24,20 +26,19 @@ public class AddSubCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
-	        subCategoryLink.click();
+	        PageUtility.click(subCategoryLink);
 	    }
 
 	    public void clickOnCreateNewButton() {
-	        createNewBtn.click();
+	        PageUtility.click(createNewBtn);
 	    }
 
 	    public void selectCategoryByValue(String value) {
-	        Select select = new Select(categoryDropdown);
-	        select.selectByValue(value);
+	        PageUtility.selectByValue(categoryDropdown, value);
 	    }
 
 	    public void enterSubCategoryName(String subCategoryName) {
-	        subCategoryField.sendKeys(subCategoryName);
+	        PageUtility.sendKeys(subCategoryField, subCategoryName);
 	    }
 
 	    /*public void uploadFile(String filePath) {
@@ -45,7 +46,7 @@ public class AddSubCategoryPage {
 	    }*/
 
 	    public void clickOnSubmitButton() {
-	        submitBtn.click();
+	        PageUtility.click(submitBtn);
 	    }
 
 	    public boolean isSubcategoryPageCreated() {

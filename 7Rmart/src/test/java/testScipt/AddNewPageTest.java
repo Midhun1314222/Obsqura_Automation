@@ -6,15 +6,16 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManagePage;
 import utilities.ExcelUtility;
 
 public class AddNewPageTest extends Base {
 	 @Test
-	    public void verifyUserIsAbleToCreateNewPage() throws IOException {
-		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
-	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
+	    public void verifyUserIsAbleToCreateNewPage(){
+		    String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
+	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        
 	        LoginPage loginPage = new LoginPage(driver);
 	        loginPage.enterUserNameOnUserNameField(usernameVal);

@@ -6,18 +6,25 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
+import constants.Messages;
 import pages.AddNewAdminUserPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AddNewAdminUserTest extends Base {
 	 @Test
-	    public void verifyUserIsAbleToAddNewAdminUser() throws IOException {
-		    String usernameVal = ExcelUtility.getStringData(1, 0, "Login");
-	        String passwordVal = ExcelUtility.getStringData(1, 1, "Login");
+	    public void verifyUserIsAbleToAddNewAdminUser(){
+		    String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
+	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        
-	        String newUserName = "midhunnand";
-	        String newPassword = "midhunnand451";
+	        //String newUserName = "midhunnand";
+	        //String newPassword = "midhunnand451";
+	        String firstname=RandomDataUtility.getFirstName();
+	        String lastname=RandomDataUtility.getLastName();
+	        String newUserName=firstname;
+	        String newPassword=firstname+"."+lastname;
 	        String newUserType = "admin";
 
 	        LoginPage loginPage = new LoginPage(driver);
@@ -37,6 +44,6 @@ public class AddNewAdminUserTest extends Base {
 	        addNewAdminUserPage.clickOnSaveBtn();
 
 	        boolean isUserAddedSuccess = addNewAdminUserPage.isUserAddedSuccess();
-	        assertTrue(isUserAddedSuccess, "New admin user was not added successfully");
+	        assertTrue(isUserAddedSuccess, Messages.USER_IS_NOT_CREATED);
 	    }
 }
