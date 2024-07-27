@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class DeleteSubCategoryPage {
 	  WebDriver driver;
+	  WebElementsUtility webelementsutility=new WebElementsUtility();
+
 
 	    public DeleteSubCategoryPage(WebDriver driver) {
 	        this.driver = driver;
@@ -16,12 +19,19 @@ public class DeleteSubCategoryPage {
 	    }
 
 	    @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category' and @class='small-box-footer']")private WebElement subCategoryLink;
+		@FindBy(xpath="//h1[text()='List Sub Categories']")private WebElement listSubcategoriesText;
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[4]/div[2]/table/tbody/tr[1]/td[5]/a[2]")private WebElement deleteBtn;
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement deleteSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
 	        PageUtility.click(subCategoryLink);
 	    }
+	    
+	    public boolean isListSubcategoryTextVisible()
+		{
+			boolean islistSubcategoriesTextAvailable=webelementsutility.isElementDisplayed(listSubcategoriesText);
+			return islistSubcategoriesTextAvailable;
+		}
 
 	    public void clickOnDeleteButton() {
 	    	 PageUtility.click(deleteBtn);
@@ -29,6 +39,7 @@ public class DeleteSubCategoryPage {
 	    }
 
 	    public boolean isSubcategoryPageDeleted() {
-	        return deleteSubCategorySuccess.isDisplayed();
-	    }
+	    	boolean isSubCategoryPageDeleteSuccessAlertDisplayed=webelementsutility.isElementDisplayed(deleteSubCategorySuccess);
+	    	return isSubCategoryPageDeleteSuccessAlertDisplayed;		
+	    	}
 	}

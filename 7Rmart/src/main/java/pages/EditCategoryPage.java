@@ -1,15 +1,16 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class EditCategoryPage {
 	   WebDriver driver;
+	   WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public EditCategoryPage(WebDriver driver) {
 	        this.driver = driver;
@@ -17,6 +18,7 @@ public class EditCategoryPage {
 	    }
 
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div/div/div[6]/div/a")private WebElement categoryBtn;
+		@FindBy(xpath="//h1[@class='m-0 text-dark']")private WebElement editCategoriesHeader ;
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[4]/div[2]/table/tbody/tr[1]/td[4]/a[1]")private WebElement editBtn;
 	    @FindBy(xpath = "//input[@type='text']")private WebElement editedCategory;
 	    @FindBy(xpath = "//a[@role='button']")private WebElement deleteImage;
@@ -30,6 +32,12 @@ public class EditCategoryPage {
 	    public void clickOnCategoryBtn() {
 	        PageUtility.click(categoryBtn);
 	    }
+	    
+	    public boolean isEditCategoriesHeaderDisplayed()
+		{
+			boolean isEditCategoriesHeaderAvailabe=webelementsutility.isElementDisplayed(editCategoriesHeader);
+			return isEditCategoriesHeaderAvailabe;
+		}
 
 	    public void clickOnEditBtn() {
 	        PageUtility.click(editBtn);
@@ -61,6 +69,7 @@ public class EditCategoryPage {
 	        PageUtility.clickElementByJS(driver, submitBtn);
 	    }
 	    public boolean isCategoryEdited() {
-	        return successMessage.isDisplayed();
-	    }
+	    	boolean isEditCategorySuccessAlertDisplayed=webelementsutility.isElementDisplayed(successMessage);
+	    	return isEditCategorySuccessAlertDisplayed;		 
+	    	}
 }

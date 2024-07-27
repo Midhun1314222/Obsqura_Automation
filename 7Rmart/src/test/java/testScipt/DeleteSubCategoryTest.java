@@ -1,12 +1,10 @@
 package testScipt;
 
-import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import constants.Messages;
 import pages.DeleteSubCategoryPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -27,9 +25,13 @@ public class DeleteSubCategoryTest extends Base {
         DeleteSubCategoryPage deleteSubcategoryPage = new DeleteSubCategoryPage(driver);
 
         deleteSubcategoryPage.clickOnSubCategoryLink();
+		boolean isListSubcategoryTextloaded= deleteSubcategoryPage.isListSubcategoryTextVisible();
+
+        
         deleteSubcategoryPage.clickOnDeleteButton();
-     
         boolean isSubcategoryPageDeletedSuccess = deleteSubcategoryPage.isSubcategoryPageDeleted();
-        assertTrue(isSubcategoryPageDeletedSuccess, "Subcategory page not deleted successfully");
+        
+		Assert.assertTrue(isListSubcategoryTextloaded,Messages.LIST_SUBCATEGORIES_HEADER_NOT_FOUND);
+		Assert.assertTrue(isSubcategoryPageDeletedSuccess, Messages.SUCCESS_ALERT_NOT_FOUND);
     }
 }

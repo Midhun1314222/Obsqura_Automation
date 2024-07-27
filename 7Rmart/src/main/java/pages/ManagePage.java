@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class ManagePage {
     WebDriver driver;
+	WebElementsUtility webelementsutility=new WebElementsUtility();
 
     public ManagePage(WebDriver driver) {
         this.driver = driver;
@@ -16,7 +18,9 @@ public class ManagePage {
     }
 
     @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-page' and @class='small-box-footer']")private WebElement managePageBtn;
-    @FindBy(xpath = "//a[@onclick='click_button(1)']")private WebElement createNewBtn;
+	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger' and text()=' New']")private WebElement newButtonOnMangePage;
+	@FindBy(xpath = "//a[@onclick='click_button(1)']")private WebElement createNewBtn;
+    @FindBy(xpath = "//h1[text()='List Pages']")private WebElement enterPageInformationsText;
     @FindBy(xpath = "//input[@id='title']")private WebElement titleField;
     @FindBy(xpath = "//div[@role='textbox']")private WebElement descField;
     @FindBy(xpath = "//input[@id='page']")private WebElement page;
@@ -26,10 +30,22 @@ public class ManagePage {
     public void clickOnManagePageBtn() {
         PageUtility.click(managePageBtn);
     }
+    
+    public boolean isNewButtonVisible()
+		{
+			boolean isNewButtonAvailable=webelementsutility.isElementDisplayed(newButtonOnMangePage);
+			return isNewButtonAvailable;
+		}
 
     public void clickOnCreateNewBtn() {
         PageUtility.click(createNewBtn);
     }
+    
+    public boolean isEnterPageInformationsHeaderDisplayed()
+	{
+		boolean isEnterPageInformationsHeaderAvailable=webelementsutility.isElementDisplayed(enterPageInformationsText);
+		return isEnterPageInformationsHeaderAvailable;
+	}
 
     public void enterTitle(String title) {
         PageUtility.sendKeys(titleField, title);
@@ -47,6 +63,7 @@ public class ManagePage {
         PageUtility.click(submitBtn);
     }
     public boolean isManagePageLoaded() {
-        return successMessage.isDisplayed();
-    }
+    	boolean isManagePageSuccessAlertDisplayed=webelementsutility.isElementDisplayed(successMessage);
+    	return isManagePageSuccessAlertDisplayed;
+    	}
 }

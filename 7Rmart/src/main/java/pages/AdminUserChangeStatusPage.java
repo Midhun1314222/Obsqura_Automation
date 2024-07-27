@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class AdminUserChangeStatusPage {
 	 WebDriver driver;
+	 WebElementsUtility webelementsutility=new WebElementsUtility();
+
 
 	    public AdminUserChangeStatusPage(WebDriver driver) {
 	        this.driver = driver;
@@ -28,6 +31,6 @@ public class AdminUserChangeStatusPage {
 	    }
 
 	    public boolean isStatusChangedSuccess() {
-	        return changeStatusSuccess.isDisplayed();
-	    }
+	    	boolean isAdminUserChangeStatusSuccesssAlertDisplayed=webelementsutility.isElementDisplayed(changeStatusSuccess);
+	    	return isAdminUserChangeStatusSuccesssAlertDisplayed;		    }
 }

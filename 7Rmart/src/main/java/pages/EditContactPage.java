@@ -7,9 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class EditContactPage {
 	  WebDriver driver;
+	  WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public EditContactPage(WebDriver driver) {
 	        this.driver = driver;
@@ -17,7 +19,9 @@ public class EditContactPage {
 	    }
 
 	    @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact' and @class='small-box-footer']")private WebElement moreInfoBtn;
+		@FindBy(xpath="//h1[text()='Contact Us']")private WebElement contactUsHeader;
 	    @FindBy(xpath = "//a[@role='button']")private WebElement actionBtn;
+		@FindBy(xpath="//h3[text()='Contact Us Informations']")private WebElement contactUsInformationText;
 	    @FindBy(xpath = "//input[@id='phone']")private WebElement editPhone;
 	    @FindBy(xpath = "//input[@id='email']")private WebElement editEmail;
 	    @FindBy(xpath = "//textarea[@name='address']")private WebElement editAddress;
@@ -29,10 +33,22 @@ public class EditContactPage {
 	    public void clickOnMoreInfoButton() {
 	        PageUtility.click(moreInfoBtn);
 	    }
+	    
+	    public boolean isContactUsHeaderDisplayed()
+		{
+			boolean isContactUsHeaderAvailable=webelementsutility.isElementDisplayed(contactUsHeader);
+			return isContactUsHeaderAvailable;
+		}
 
 	    public void clickOnActionButton() {
 	        PageUtility.click(actionBtn);
 	    }
+	    
+	    public boolean isContactUsInformationTextDisplayed()
+		{
+			boolean isContactUsInformationTextAvailable=webelementsutility.isElementDisplayed(contactUsInformationText);
+			return isContactUsInformationTextAvailable;
+		}
 
 	    public void enterPhoneNumber(String phoneNumber) {
 	        PageUtility.clearAndSendKeys(editPhone, phoneNumber);
@@ -64,6 +80,6 @@ public class EditContactPage {
 	    }
 
 	    public boolean isContactEdited() {
-	        return editContactSuccess.isDisplayed();
-	    }
+	    	boolean isEditContactSuccessAlertDisplayed=webelementsutility.isElementDisplayed(editContactSuccess);
+	    	return isEditContactSuccessAlertDisplayed;	    }
 }

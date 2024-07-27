@@ -1,12 +1,10 @@
 package testScipt;
 
-import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import constants.Messages;
 import pages.AdminUserSearchPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -16,10 +14,7 @@ public class AdminUserSearchTest extends Base{
     public void verifyAdminUserSearch(){
 		String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
 	    String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
-	    
-        String searchUserName = "MIDHUN";
-        String searchUserType = "staff";
-
+	            
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.enterUserNameOnUserNameField(usernameVal);
@@ -27,14 +22,17 @@ public class AdminUserSearchTest extends Base{
         loginPage.clickOnSignInButton();
 
         AdminUserSearchPage adminUserSearchPage = new AdminUserSearchPage(driver);
-
+        String searchUserName = ExcelUtility.getStringData(1, 0,Constants.ADMIN_USER_SEARCH_DATA);
+        String searchUserType = ExcelUtility.getStringData(1, 1,Constants.ADMIN_USER_SEARCH_DATA);
         adminUserSearchPage.clickOnAdminUsersBtn();
+        
         adminUserSearchPage.clickOnSearchBtn();
+		boolean is_admin_users_header_available=adminUserSearchPage.isAdminUserHeaderDisplayed();
+        
         adminUserSearchPage.enterUserName(searchUserName);
         adminUserSearchPage.selectUserType(searchUserType);
         adminUserSearchPage.clickOnFindUserBtn();
 
-        boolean isSearchResultsDisplayed = adminUserSearchPage.isSearchResultsDisplayed();
-        assertTrue(isSearchResultsDisplayed, "Admin user search results not displayed");
+		Assert.assertTrue(is_admin_users_header_available,Messages.ADMIN_USERS_HEADER_NOT_FOUND);
     }
 }

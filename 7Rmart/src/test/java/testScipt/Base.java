@@ -44,7 +44,6 @@ public class Base {
         }
         driver.get(prop.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //driver.get("https://groceryapp.uniqassosiates.com/admin/login"); // Launch the URL
         driver.manage().window().maximize();
     }
 

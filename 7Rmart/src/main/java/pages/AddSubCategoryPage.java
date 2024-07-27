@@ -7,10 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import utilities.PageUtility;
+import utilities.WebElementsUtility;
 
 public class AddSubCategoryPage {
 
 	 WebDriver driver;
+	 WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public AddSubCategoryPage(WebDriver driver) {
 	        this.driver = driver;
@@ -18,7 +20,9 @@ public class AddSubCategoryPage {
 	    }
 
 	    @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category' and @class='small-box-footer']")private WebElement subCategoryLink;
+		@FindBy(xpath="//h1[text()='List Sub Categories']")private WebElement listSubcategoriesText;
 	    @FindBy(xpath = "//a[@onclick='click_button(1)']")private WebElement createNewBtn;
+		@FindBy(xpath="//h1[text()='Add Sub Category']")private WebElement addSubcategoryText;
 	    @FindBy(xpath = "//select[@id='cat_id']")private WebElement categoryDropdown;
 	    @FindBy(xpath = "//input[@id='subcategory']")private WebElement subCategoryField;
 	    //@FindBy(xpath = "//input[@type='file']")private WebElement fileUploadField;
@@ -26,11 +30,22 @@ public class AddSubCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
-	        PageUtility.click(subCategoryLink);
+	    	PageUtility.click(subCategoryLink);
 	    }
+	    public boolean isListSubcategoryTextVisible()
+		{
+			boolean islistSubcategoriesTextAvailable=webelementsutility.isElementDisplayed(listSubcategoriesText);
+			return islistSubcategoriesTextAvailable;
+		}
 
 	    public void clickOnCreateNewButton() {
 	        PageUtility.click(createNewBtn);
+	    }
+	    
+	    public boolean isAddSubCategoryTextVisible()
+	    {
+	    	boolean isaddSubcategoryTextAvailable=webelementsutility.isElementDisplayed(addSubcategoryText);
+	    	return isaddSubcategoryTextAvailable;
 	    }
 
 	    public void selectCategoryByValue(String value) {
@@ -50,6 +65,6 @@ public class AddSubCategoryPage {
 	    }
 
 	    public boolean isSubcategoryPageCreated() {
-	        return addSubCategorySuccess.isDisplayed();
-	    }
+	    	boolean isAddSubCategorySuccessAlertDisplayed=webelementsutility.isElementDisplayed(addSubCategorySuccess);
+	    	return isAddSubCategorySuccessAlertDisplayed;	    }
 	}
