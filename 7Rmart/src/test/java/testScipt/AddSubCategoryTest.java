@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import baseConfiguration.Base;
 import constants.Constants;
 import constants.Messages;
 import pages.AddSubCategoryPage;
@@ -37,7 +38,6 @@ public class AddSubCategoryTest extends Base {
 			
 		    String subCategoryName = RandomDataUtility.getProductSubCategory();
 	        String categoryValue = ExcelUtility.getIntegerData(0, 1,Constants.ADD_SUB_CATEGORY_DATA);
-
 	        
 	        addSubcategoryPage.selectCategoryByValue(categoryValue);
 	        addSubcategoryPage.enterSubCategoryName(subCategoryName);

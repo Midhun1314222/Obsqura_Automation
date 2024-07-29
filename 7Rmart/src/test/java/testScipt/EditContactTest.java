@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import baseConfiguration.Base;
 import constants.Constants;
 import constants.Messages;
 import pages.EditContactPage;

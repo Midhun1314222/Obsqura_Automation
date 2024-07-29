@@ -1,4 +1,4 @@
-package testScipt;
+package baseConfiguration;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,6 +20,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import constants.Constants;
+import utilities.WaitUtility;
 
 public class Base {
     public WebDriver driver;
@@ -43,7 +44,7 @@ public class Base {
             throw new Exception("Browser is not correct");
         }
         driver.get(prop.getProperty("url"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
         driver.manage().window().maximize();
     }
 
@@ -52,7 +53,7 @@ public class Base {
         if(result.getStatus() == ITestResult.FAILURE) {
             takesScreenshot(result);
         }
-        driver.close();
+        //driver.close();
     }
 
     public void takesScreenshot(ITestResult result) throws IOException {

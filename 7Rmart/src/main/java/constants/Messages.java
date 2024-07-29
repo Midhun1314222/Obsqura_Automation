@@ -15,6 +15,4 @@ public static final String CONTACT_US_INFORMATIONS_TEXT_NOT_FOUND="'Contact Us I
 public static final String LIST_PAGE_HEADER_NOT_FOUND="'List Page' text is not displayed";
 public static final String ENTER_PAGE_INFORMATION_HEADER_NOT_FOUND="'Enter page information' text is not displayed";
 public static final String MANAGE_PAGES_NEW_BUTTON_IS_NOT_LOADED="Manage page is not loaded with new button";
-
-
 }

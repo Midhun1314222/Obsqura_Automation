@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import baseConfiguration.Base;
 import constants.Constants;
 import dataProvider.DataProviders;
 import pages.LoginPage;
