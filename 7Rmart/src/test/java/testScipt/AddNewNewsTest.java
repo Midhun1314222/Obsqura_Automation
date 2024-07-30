@@ -33,8 +33,8 @@ public class AddNewNewsTest extends Base {
 			
 	        String newsContent = RandomDataUtility.getNews();
 	        addNewNewsPage.enterNews(newsContent);
+	        
 	        addNewNewsPage.clickOnSubmitBtn();
-
 	        boolean is_add_subcategory_success_alert_displayed = addNewNewsPage.isNewsAddedSuccessfully();
 	        
 			Assert.assertTrue(is_manage_news_header_available,Messages.MANAGE_NEWS_HEADER_NOT_FOUND);

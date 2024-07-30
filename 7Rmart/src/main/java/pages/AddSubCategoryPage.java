@@ -12,7 +12,6 @@ import utilities.WebElementsUtility;
 public class AddSubCategoryPage {
 
 	 WebDriver driver;
-	 WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public AddSubCategoryPage(WebDriver driver) {
 	        this.driver = driver;
@@ -34,7 +33,7 @@ public class AddSubCategoryPage {
 	    }
 	    public boolean isListSubcategoryTextVisible()
 		{
-			boolean islistSubcategoriesTextAvailable=webelementsutility.isElementDisplayed(listSubcategoriesText);
+			boolean islistSubcategoriesTextAvailable=WebElementsUtility.isElementDisplayed(listSubcategoriesText);
 			return islistSubcategoriesTextAvailable;
 		}
 
@@ -44,7 +43,7 @@ public class AddSubCategoryPage {
 	    
 	    public boolean isAddSubCategoryTextVisible()
 	    {
-	    	boolean isaddSubcategoryTextAvailable=webelementsutility.isElementDisplayed(addSubcategoryText);
+	    	boolean isaddSubcategoryTextAvailable=WebElementsUtility.isElementDisplayed(addSubcategoryText);
 	    	return isaddSubcategoryTextAvailable;
 	    }
 
@@ -65,6 +64,6 @@ public class AddSubCategoryPage {
 	    }
 
 	    public boolean isSubcategoryPageCreated() {
-	    	boolean isAddSubCategorySuccessAlertDisplayed=webelementsutility.isElementDisplayed(addSubCategorySuccess);
+	    	boolean isAddSubCategorySuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(addSubCategorySuccess);
 	    	return isAddSubCategorySuccessAlertDisplayed;	    }
 	}

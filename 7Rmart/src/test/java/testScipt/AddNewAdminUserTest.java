@@ -19,7 +19,6 @@ public class AddNewAdminUserTest extends Base {
 	        	      
 	        LoginPage loginPage = new LoginPage(driver);
 
-	        // Perform login actions
 	        loginPage.enterUserNameOnUserNameField(usernameVal);
 	        loginPage.enterPasswordOnPasswordField(passwordVal);
 	        loginPage.clickOnSignInButton();

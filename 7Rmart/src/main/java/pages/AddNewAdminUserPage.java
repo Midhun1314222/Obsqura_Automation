@@ -9,7 +9,6 @@ import utilities.WebElementsUtility;
 
 public class AddNewAdminUserPage {
 	  WebDriver driver;
-	  WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public AddNewAdminUserPage(WebDriver driver) {
 	        this.driver = driver;
@@ -31,7 +30,7 @@ public class AddNewAdminUserPage {
 	    
 	    public boolean isAdminUserInformationsHeaderDisplayed()
 		{
-			boolean isAdminUserInformationsHeaderAvailabe=webelementsutility.isElementDisplayed(adminUserInformationsHeader);
+			boolean isAdminUserInformationsHeaderAvailabe=WebElementsUtility.isElementDisplayed(adminUserInformationsHeader);
 			return isAdminUserInformationsHeaderAvailabe;
 		}
 
@@ -56,7 +55,7 @@ public class AddNewAdminUserPage {
 	    }
 
 	    public boolean isUserAddedSuccess() {
-	    	boolean isAddNewAdminUserSuccessAlertDisplayed=webelementsutility.isElementDisplayed(addUserSuccess);
+	    	boolean isAddNewAdminUserSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(addUserSuccess);
 	    	return isAddNewAdminUserSuccessAlertDisplayed;	
 	    }
 }

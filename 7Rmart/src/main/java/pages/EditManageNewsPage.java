@@ -10,7 +10,6 @@ import utilities.WebElementsUtility;
 
 public class EditManageNewsPage {
 	  WebDriver driver;
-	  WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public EditManageNewsPage(WebDriver driver) {
 	        this.driver = driver;
@@ -31,7 +30,7 @@ public class EditManageNewsPage {
 	    
 	    public boolean isManageNewsHeaderDisplayed()
 	  		{
-	  			boolean isManageNewsHeaderAvailable=webelementsutility.isElementDisplayed(headerManageNews);
+	  			boolean isManageNewsHeaderAvailable=WebElementsUtility.isElementDisplayed(headerManageNews);
 	  			return isManageNewsHeaderAvailable;
 	  		}
 
@@ -41,7 +40,7 @@ public class EditManageNewsPage {
 	    
 	    public boolean isHeaderEnterNewsInformationDisplayed()
 		{
-			boolean isHeaderEnterNewsInformationAvailable=webelementsutility.isElementDisplayed(headerenternewsinformation);
+			boolean isHeaderEnterNewsInformationAvailable=WebElementsUtility.isElementDisplayed(headerenternewsinformation);
 			return isHeaderEnterNewsInformationAvailable;
 		}
 
@@ -54,7 +53,7 @@ public class EditManageNewsPage {
 	    }
 
 	    public boolean isNewsEditedSuccessfully() {
-	    	boolean isNewsEditedSuccessMessageDisplayed=webelementsutility.isElementDisplayed(successMessage);
+	    	boolean isNewsEditedSuccessMessageDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
 	    	return isNewsEditedSuccessMessageDisplayed;	
 	    	}
 }

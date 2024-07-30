@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +10,6 @@ import utilities.WebElementsUtility;
 
 public class EditContactPage {
 	  WebDriver driver;
-	  WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public EditContactPage(WebDriver driver) {
 	        this.driver = driver;
@@ -36,7 +34,7 @@ public class EditContactPage {
 	    
 	    public boolean isContactUsHeaderDisplayed()
 		{
-			boolean isContactUsHeaderAvailable=webelementsutility.isElementDisplayed(contactUsHeader);
+			boolean isContactUsHeaderAvailable=WebElementsUtility.isElementDisplayed(contactUsHeader);
 			return isContactUsHeaderAvailable;
 		}
 
@@ -46,7 +44,7 @@ public class EditContactPage {
 	    
 	    public boolean isContactUsInformationTextDisplayed()
 		{
-			boolean isContactUsInformationTextAvailable=webelementsutility.isElementDisplayed(contactUsInformationText);
+			boolean isContactUsInformationTextAvailable=WebElementsUtility.isElementDisplayed(contactUsInformationText);
 			return isContactUsInformationTextAvailable;
 		}
 
@@ -80,6 +78,6 @@ public class EditContactPage {
 	    }
 
 	    public boolean isContactEdited() {
-	    	boolean isEditContactSuccessAlertDisplayed=webelementsutility.isElementDisplayed(editContactSuccess);
+	    	boolean isEditContactSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(editContactSuccess);
 	    	return isEditContactSuccessAlertDisplayed;	    }
 }

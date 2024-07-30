@@ -10,8 +10,6 @@ import utilities.WebElementsUtility;
 
 public class AdminUserChangeStatusPage {
 	 WebDriver driver;
-	 WebElementsUtility webelementsutility=new WebElementsUtility();
-
 
 	    public AdminUserChangeStatusPage(WebDriver driver) {
 	        this.driver = driver;
@@ -31,6 +29,6 @@ public class AdminUserChangeStatusPage {
 	    }
 
 	    public boolean isStatusChangedSuccess() {
-	    	boolean isAdminUserChangeStatusSuccesssAlertDisplayed=webelementsutility.isElementDisplayed(changeStatusSuccess);
+	    	boolean isAdminUserChangeStatusSuccesssAlertDisplayed=WebElementsUtility.isElementDisplayed(changeStatusSuccess);
 	    	return isAdminUserChangeStatusSuccesssAlertDisplayed;		    }
 }

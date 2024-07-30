@@ -33,7 +33,7 @@ public class AddSubCategoryTest extends Base {
 			boolean isAddSubCategoryTextloaded=addSubcategoryPage.isAddSubCategoryTextVisible();
 			
 		    String subCategoryName = RandomDataUtility.getProductSubCategory();
-	        String categoryValue = ExcelUtility.getIntegerData(0, 1,Constants.ADD_SUB_CATEGORY_DATA);
+	        String categoryValue   = ExcelUtility.getIntegerData(0, 1,Constants.ADD_SUB_CATEGORY_DATA);
 	        
 	        addSubcategoryPage.selectCategoryByValue(categoryValue);
 	        addSubcategoryPage.enterSubCategoryName(subCategoryName);

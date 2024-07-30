@@ -10,8 +10,7 @@ import utilities.WebElementsUtility;
 
 public class EditCategoryPage {
 	   WebDriver driver;
-	   WebElementsUtility webelementsutility=new WebElementsUtility();
-
+	   
 	    public EditCategoryPage(WebDriver driver) {
 	        this.driver = driver;
 	        PageFactory.initElements(driver, this);
@@ -35,7 +34,7 @@ public class EditCategoryPage {
 	    
 	    public boolean isEditCategoriesHeaderDisplayed()
 		{
-			boolean isEditCategoriesHeaderAvailabe=webelementsutility.isElementDisplayed(editCategoriesHeader);
+			boolean isEditCategoriesHeaderAvailabe=WebElementsUtility.isElementDisplayed(editCategoriesHeader);
 			return isEditCategoriesHeaderAvailabe;
 		}
 
@@ -69,7 +68,7 @@ public class EditCategoryPage {
 	        PageUtility.clickElementByJS(driver, submitBtn);
 	    }
 	    public boolean isCategoryEdited() {
-	    	boolean isEditCategorySuccessAlertDisplayed=webelementsutility.isElementDisplayed(successMessage);
+	    	boolean isEditCategorySuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
 	    	return isEditCategorySuccessAlertDisplayed;		 
 	    	}
 }

@@ -11,7 +11,6 @@ import utilities.WebElementsUtility;
 
 public class AdminUserSearchPage {
 	  WebDriver driver;
-	  WebElementsUtility webelementsutility=new WebElementsUtility();
 
 
 	    public AdminUserSearchPage(WebDriver driver) {
@@ -32,7 +31,7 @@ public class AdminUserSearchPage {
 	    
 	    public boolean isAdminUserHeaderDisplayed()
 		{
-			boolean isAdminUserHeaderAvailable=webelementsutility.isElementDisplayed(adminUsersHeader);
+			boolean isAdminUserHeaderAvailable=WebElementsUtility.isElementDisplayed(adminUsersHeader);
 			return isAdminUserHeaderAvailable;
 		}
 

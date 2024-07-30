@@ -10,8 +10,6 @@ import utilities.WebElementsUtility;
 
 public class DeleteSubCategoryPage {
 	  WebDriver driver;
-	  WebElementsUtility webelementsutility=new WebElementsUtility();
-
 
 	    public DeleteSubCategoryPage(WebDriver driver) {
 	        this.driver = driver;
@@ -29,7 +27,7 @@ public class DeleteSubCategoryPage {
 	    
 	    public boolean isListSubcategoryTextVisible()
 		{
-			boolean islistSubcategoriesTextAvailable=webelementsutility.isElementDisplayed(listSubcategoriesText);
+			boolean islistSubcategoriesTextAvailable=WebElementsUtility.isElementDisplayed(listSubcategoriesText);
 			return islistSubcategoriesTextAvailable;
 		}
 
@@ -39,7 +37,7 @@ public class DeleteSubCategoryPage {
 	    }
 
 	    public boolean isSubcategoryPageDeleted() {
-	    	boolean isSubCategoryPageDeleteSuccessAlertDisplayed=webelementsutility.isElementDisplayed(deleteSubCategorySuccess);
+	    	boolean isSubCategoryPageDeleteSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(deleteSubCategorySuccess);
 	    	return isSubCategoryPageDeleteSuccessAlertDisplayed;		
 	    	}
 	}

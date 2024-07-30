@@ -10,7 +10,6 @@ import utilities.WebElementsUtility;
 
 public class AddNewNewsPage {
 	 WebDriver driver;
-	 WebElementsUtility webelementsutility=new WebElementsUtility();
 
 	    public AddNewNewsPage(WebDriver driver) {
 	        this.driver = driver;
@@ -31,7 +30,7 @@ public class AddNewNewsPage {
 	    
 	    public boolean isManageNewsHeaderDisplayed()
 		{
-			boolean isManageNewsHeaderAvailable=webelementsutility.isElementDisplayed(manageNewsHeader);
+			boolean isManageNewsHeaderAvailable=WebElementsUtility.isElementDisplayed(manageNewsHeader);
 			return isManageNewsHeaderAvailable;
 		}
 
@@ -41,7 +40,7 @@ public class AddNewNewsPage {
 	    
 	    public boolean isenterNewsInformationHeaderDisplayed()
 		{
-			boolean isEnterNewsInformationHeaderAvailabe=webelementsutility.isElementDisplayed(enterNewsInformationHeader);
+			boolean isEnterNewsInformationHeaderAvailabe=WebElementsUtility.isElementDisplayed(enterNewsInformationHeader);
 			return isEnterNewsInformationHeaderAvailabe;
 		}
 
@@ -54,7 +53,7 @@ public class AddNewNewsPage {
 	    }
 
 	    public boolean isNewsAddedSuccessfully() {
-	    	boolean isAddNewsSuccessAlertDisplayed=webelementsutility.isElementDisplayed(successMessage);
+	    	boolean isAddNewsSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
 	    	return isAddNewsSuccessAlertDisplayed;	
 	    	
 	    }

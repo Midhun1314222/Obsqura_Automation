@@ -10,7 +10,6 @@ import utilities.WebElementsUtility;
 
 public class ManagePage {
     WebDriver driver;
-	WebElementsUtility webelementsutility=new WebElementsUtility();
 
     public ManagePage(WebDriver driver) {
         this.driver = driver;
@@ -33,7 +32,7 @@ public class ManagePage {
     
     public boolean isNewButtonVisible()
 		{
-			boolean isNewButtonAvailable=webelementsutility.isElementDisplayed(newButtonOnMangePage);
+			boolean isNewButtonAvailable=WebElementsUtility.isElementDisplayed(newButtonOnMangePage);
 			return isNewButtonAvailable;
 		}
 
@@ -43,7 +42,7 @@ public class ManagePage {
     
     public boolean isEnterPageInformationsHeaderDisplayed()
 	{
-		boolean isEnterPageInformationsHeaderAvailable=webelementsutility.isElementDisplayed(enterPageInformationsText);
+		boolean isEnterPageInformationsHeaderAvailable=WebElementsUtility.isElementDisplayed(enterPageInformationsText);
 		return isEnterPageInformationsHeaderAvailable;
 	}
 
@@ -63,7 +62,7 @@ public class ManagePage {
         PageUtility.click(submitBtn);
     }
     public boolean isManagePageLoaded() {
-    	boolean isManagePageSuccessAlertDisplayed=webelementsutility.isElementDisplayed(successMessage);
+    	boolean isManagePageSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
     	return isManagePageSuccessAlertDisplayed;
     	}
 }
