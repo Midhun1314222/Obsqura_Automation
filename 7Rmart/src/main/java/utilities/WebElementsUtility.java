@@ -3,11 +3,10 @@ package utilities;
 import org.openqa.selenium.WebElement;
 
 public class WebElementsUtility {
-	  public static boolean isElementDisplayed(WebElement element) {
-	    	
+	
+	  public static boolean isElementDisplayed(WebElement element) {	    	
 	    	boolean isdisplayed=element.isDisplayed();
-			return isdisplayed;
-	     
+			return isdisplayed;	     
 	    }
 
 	    public static boolean isElementSelected(WebElement element) {

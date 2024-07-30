@@ -15,22 +15,20 @@ public class FileUploadUtility {
 			
 		}
 	}
+	
 	public static void fileUploadUsingRobotClass(WebElement element,String path) throws AWTException {
 		StringSelection s = new StringSelection(path);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);//toolkit is a class and getdefaulttoolkit is a method
 		Robot r = new Robot();
 		r.delay(250);
-
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		r.keyPress(KeyEvent.VK_CONTROL);
-	      r.keyPress(KeyEvent.VK_V);
-	      r.keyRelease(KeyEvent.VK_CONTROL);
-
-	      r.keyRelease(KeyEvent.VK_V);
-	      r.keyPress(KeyEvent.VK_ENTER);
-	      r.keyRelease(KeyEvent.VK_ENTER);
-	      
+	    r.keyPress(KeyEvent.VK_V);
+	    r.keyRelease(KeyEvent.VK_CONTROL);
+	    r.keyRelease(KeyEvent.VK_V);
+	    r.keyPress(KeyEvent.VK_ENTER);
+	    r.keyRelease(KeyEvent.VK_ENTER);	      
 	}
 
 }
