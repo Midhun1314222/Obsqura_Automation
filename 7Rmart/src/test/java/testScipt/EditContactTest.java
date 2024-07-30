@@ -1,9 +1,5 @@
 package testScipt;
 
-import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -33,8 +29,7 @@ public class EditContactTest extends Base {
 			
 	        editContactPage.clickOnActionButton();
 			boolean is_header_contact_us_informations_loaded=editContactPage.isContactUsInformationTextDisplayed();
-	        
-			 
+	        		 
 	        String newPhoneNumber = ExcelUtility.getIntegerData(1, 0,Constants.EDIT_CONTACT_TEST_DATA);
 	        String newEmail = ExcelUtility.getStringData(1, 1,Constants.EDIT_CONTACT_TEST_DATA);
 	        String newAddress= ExcelUtility.getStringData(1, 2,Constants.EDIT_CONTACT_TEST_DATA);
