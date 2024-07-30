@@ -3,6 +3,7 @@ package utilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
@@ -27,6 +28,13 @@ public class PageUtility {
 	 public static void acceptAlert(WebDriver driver) {
 	        driver.switchTo().alert().accept();
 	    }
+	 
+	 public static void actionClick(WebDriver driver,WebElement element)
+		{
+			Actions actions = new Actions(driver);
+			actions.contextClick(element);
+			
+		}
 	 
 	 public static void clearAndSendKeys(WebElement element, String value) {
 	        element.clear();

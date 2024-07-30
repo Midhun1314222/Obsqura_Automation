@@ -1,12 +1,17 @@
 package pages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
+import utilities.FileUploadUtility;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 import utilities.WebElementsUtility;
 
 public class AddSubCategoryPage {
@@ -24,7 +29,8 @@ public class AddSubCategoryPage {
 		@FindBy(xpath="//h1[text()='Add Sub Category']")private WebElement addSubcategoryText;
 	    @FindBy(xpath = "//select[@id='cat_id']")private WebElement categoryDropdown;
 	    @FindBy(xpath = "//input[@id='subcategory']")private WebElement subCategoryField;
-	    //@FindBy(xpath = "//input[@type='file']")private WebElement fileUploadField;
+	    @FindBy(xpath = "//input[@type='file']")private WebElement fileUploadField;
+		@FindBy(xpath="//div[@id='imagePreview']")private WebElement imagePreview ;
 	    @FindBy(xpath = "//button[@type='submit']")private WebElement submitBtn;
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addSubCategorySuccess;
 
@@ -54,13 +60,17 @@ public class AddSubCategoryPage {
 	    public void enterSubCategoryName(String subCategoryName) {
 	        PageUtility.sendKeys(subCategoryField, subCategoryName);
 	    }
-
-	    /*public void uploadFile(String filePath) {
-	        fileUploadField.sendKeys(filePath);
-	    }*/
+  
+	    public void uploadFile() throws AWTException
+		{
+				
+	    	FileUploadUtility.fileUploadUsingSendkeys(fileUploadField,Constants.TESTDATA_IMAGE_FOR_ADD_SUBCATEGORY);
+	    	WaitUtility.waitForElement(driver, imagePreview);
+			System.out.println("Image added successfully");
+		}
 
 	    public void clickOnSubmitButton() {
-	        PageUtility.click(submitBtn);
+	        PageUtility.clickElementByJS(driver, submitBtn);
 	    }
 
 	    public boolean isSubcategoryPageCreated() {

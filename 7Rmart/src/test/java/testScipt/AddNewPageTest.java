@@ -1,5 +1,7 @@
 package testScipt;
 
+import java.awt.AWTException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,8 +13,8 @@ import pages.ManagePage;
 import utilities.ExcelUtility;
 
 public class AddNewPageTest extends Base {
-	 @Test
-	    public void verifyUserIsAbleToCreateNewPage(){
+	@Test(groups={"regression","smoke"})
+	    public void verifyUserIsAbleToCreateNewPage() throws AWTException{
 		    String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
 	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        
@@ -35,6 +37,7 @@ public class AddNewPageTest extends Base {
 	        managePage.enterTitle(titledata);
 	        managePage.enterDescription(descriptiondata);
 	        managePage.enterPage(pagedata);
+	        managePage.clickOnAddImage();
 	        managePage.clickOnSubmitBtn();	        
 	        boolean isManagePageAvailable = managePage.isManagePageLoaded();
 	        

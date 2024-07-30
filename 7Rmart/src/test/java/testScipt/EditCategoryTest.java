@@ -29,11 +29,8 @@ public class EditCategoryTest extends Base {
 			
 	        editCategoryPage.clickOnEditBtn();
 	        String editedCategoryName = ExcelUtility.getStringData(1, 0,Constants.EDIT_CATEGORY_TEST_DATA);
-		       //String imagePath = "D:\\cars.jpeg";
 
 	        editCategoryPage.enterEditedCategory(editedCategoryName);
-	        //editCategoryPage.clickOnDeleteImage();
-	        //editCategoryPage.uploadImage(imagePath);
 	        editCategoryPage.clickOnShowOnTopRadioBtn();
 	        editCategoryPage.clickOnShowOnLeftRadioBtn();
 	        

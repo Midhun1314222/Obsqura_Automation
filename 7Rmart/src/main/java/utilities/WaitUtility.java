@@ -15,27 +15,27 @@ public class WaitUtility {
     public static final long FLUENT_WAIT_TIMEOUT = 15;
     public static final long FLUENT_WAIT_POLLING = 2;
 	    
-	public void waitForElement(WebDriver driver, WebElement target) {
+	public static void waitForElement(WebDriver driver, WebElement target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.visibilityOf(target));
 	}
 	
-	public void waitForElementToBeClickable(WebDriver driver,WebElement element) {
+	public static void waitForElementToBeClickable(WebDriver driver,WebElement element) {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 	    wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
-	public void waitForAlertToBeVisible(WebDriver driver) {
+	public static void waitForAlertToBeVisible(WebDriver driver) {
 			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 			    wait.until(ExpectedConditions.alertIsPresent());
 	}
 	
-	public void waitForElementToBeSelected(WebDriver driver,WebElement element) {
+	public static void waitForElementToBeSelected(WebDriver driver,WebElement element) {
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		 wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
 	
-	public void fluentWaitForElement(WebDriver driver, WebElement target) {
+	public static void fluentWaitForElement(WebDriver driver, WebElement target) {
 	    FluentWait<WebDriver> wait = new FluentWait<>(driver)
 	            .withTimeout(Duration.ofSeconds(FLUENT_WAIT_TIMEOUT))
 	            .pollingEvery(Duration.ofSeconds(FLUENT_WAIT_POLLING))
@@ -48,7 +48,7 @@ public class WaitUtility {
 	    });
 	}
 	
-	public void fluentWaitForElementToBeSelected(WebDriver driver, WebElement element) {
+	public static void fluentWaitForElementToBeSelected(WebDriver driver, WebElement element) {
 	    FluentWait<WebDriver> wait = new FluentWait<>(driver)
 	            .withTimeout(Duration.ofSeconds(FLUENT_WAIT_TIMEOUT))
 	            .pollingEvery(Duration.ofSeconds(FLUENT_WAIT_POLLING))

@@ -1,5 +1,7 @@
 package testScipt;
 
+import java.awt.AWTException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +16,7 @@ import utilities.RandomDataUtility;
 public class AddSubCategoryTest extends Base {
 	
 	@Test(groups={"sanity","regression"})
-	public void verifyUserIsAbleToAddSubcategory(){
+	public void verifyUserIsAbleToAddSubcategory() throws AWTException{
 	        String usernameVal = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
 	        String passwordVal = ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
 	        	      
@@ -37,6 +39,7 @@ public class AddSubCategoryTest extends Base {
 	        
 	        addSubcategoryPage.selectCategoryByValue(categoryValue);
 	        addSubcategoryPage.enterSubCategoryName(subCategoryName);
+	        addSubcategoryPage.uploadFile();
 	        
 	        addSubcategoryPage.clickOnSubmitButton();	      
 	        boolean isNewSubCategoryCreated = addSubcategoryPage.isSubcategoryPageCreated();

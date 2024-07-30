@@ -1,9 +1,8 @@
 package testScipt;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import baseConfiguration.Base;
@@ -14,7 +13,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	
-	@Test(groups={"smoke","regression"})//for multiple group
+	@Test(groups={"smoke","regression"})
 	public void verifyTheUserIsAbleToLoginUsingValidCredentials() {
 		String usernameVal=ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
 		String passwordVal=ExcelUtility.getStringData(1, 1, Constants.LOGINPAGE);
@@ -24,7 +23,7 @@ public class LoginTest extends Base {
 		loginPage.enterPasswordOnPasswordField(passwordVal);
 		loginPage.clickOnSignInButton();
 		boolean isHomePageAvailable=loginPage.isHomePageLoaded();
-		assertTrue(isHomePageAvailable,"Home page not loaded when user is entering valid credentials");
+		Assert.assertTrue(isHomePageAvailable,"Home page not loaded when user is entering valid credentials");
 	}	
     
     @Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
@@ -34,7 +33,7 @@ public class LoginTest extends Base {
            loginPage.enterPasswordOnPasswordField(password);
            loginPage.clickOnSignInButton();
            boolean actualresultlogin=loginPage.isHomePageLoaded();
-           assertTrue(actualresultlogin, "Home page should not be loaded when user is entering invalid credentials");
+           Assert.assertTrue(actualresultlogin, "Home page should not be loaded when user is entering invalid credentials");
 
     }
 }

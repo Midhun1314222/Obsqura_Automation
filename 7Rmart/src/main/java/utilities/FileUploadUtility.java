@@ -9,13 +9,13 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.WebElement;
 
 public class FileUploadUtility {
-	public void fileUploadUsingSendkeys(WebElement element,String path) {
+	public static void fileUploadUsingSendkeys(WebElement element,String path) {
 		{
 			element.sendKeys(path);
 			
 		}
 	}
-	public void fileUploadUsingRobotClass(WebElement element,String path) throws AWTException {
+	public static void fileUploadUsingRobotClass(WebElement element,String path) throws AWTException {
 		StringSelection s = new StringSelection(path);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);//toolkit is a class and getdefaulttoolkit is a method
 		Robot r = new Robot();

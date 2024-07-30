@@ -21,7 +21,6 @@ public class EditCategoryPage {
 	    @FindBy(xpath = "/html/body/div[1]/div[1]/section/div[4]/div[2]/table/tbody/tr[1]/td[4]/a[1]")private WebElement editBtn;
 	    @FindBy(xpath = "//input[@type='text']")private WebElement editedCategory;
 	    @FindBy(xpath = "//a[@role='button']")private WebElement deleteImage;
-	    //@FindBy(xpath = "//input[@type='file']")private WebElement imageUpload;
 	    @FindBy(xpath = "//input[@name='top_menu' and @value='yes']")private WebElement showOnTopRadioBtn;
 	    @FindBy(xpath = "//input[@name='show_home' and @value='no']")private WebElement showOnLeftRadioBtn;
 	    @FindBy(xpath = "//button[@type='submit']")private WebElement submitBtn;
@@ -44,17 +43,7 @@ public class EditCategoryPage {
 
 	    public void enterEditedCategory(String categoryName) {
 	        PageUtility.clearAndSendKeys(editedCategory, categoryName);
-
-	    }
-
-	    /*public void clickOnDeleteImage() {
-	        deleteImage.click();
-	        driver.switchTo().alert().accept();
-	    }
-
-	    public void uploadImage(String imagePath) {
-	        imageUpload.sendKeys(imagePath);
-	    }*/
+	    }	   
 
 	    public void clickOnShowOnTopRadioBtn() {
 	        PageUtility.click(showOnTopRadioBtn);
@@ -70,5 +59,5 @@ public class EditCategoryPage {
 	    public boolean isCategoryEdited() {
 	    	boolean isEditCategorySuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
 	    	return isEditCategorySuccessAlertDisplayed;		 
-	    	}
+	    }
 }
