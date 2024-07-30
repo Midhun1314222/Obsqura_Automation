@@ -38,10 +38,10 @@ public class ManagePage {
     }
     
     public boolean isNewButtonVisible()
-		{
-			boolean isNewButtonAvailable=WebElementsUtility.isElementDisplayed(newButtonOnMangePage);
-			return isNewButtonAvailable;
-		}
+	{
+		boolean isNewButtonAvailable=WebElementsUtility.isElementDisplayed(newButtonOnMangePage);
+		return isNewButtonAvailable;
+	}
 
     public void clickOnCreateNewBtn() {
         PageUtility.click(createNewBtn);
@@ -75,10 +75,10 @@ public class ManagePage {
 
     public void clickOnSubmitBtn() {
         PageUtility.clickElementByJS(driver, submitBtn);
-
     }
+    
     public boolean isManagePageLoaded() {
     	boolean isManagePageSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);
     	return isManagePageSuccessAlertDisplayed;
-    	}
+    }
 }

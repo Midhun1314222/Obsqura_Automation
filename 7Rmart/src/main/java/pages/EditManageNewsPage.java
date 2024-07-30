@@ -29,10 +29,10 @@ public class EditManageNewsPage {
 	    }
 	    
 	    public boolean isManageNewsHeaderDisplayed()
-	  		{
-	  			boolean isManageNewsHeaderAvailable=WebElementsUtility.isElementDisplayed(headerManageNews);
-	  			return isManageNewsHeaderAvailable;
-	  		}
+  		{
+  			boolean isManageNewsHeaderAvailable=WebElementsUtility.isElementDisplayed(headerManageNews);
+  			return isManageNewsHeaderAvailable;
+  		}
 
 	    public void clickOnEditBtn() {
 	        PageUtility.click(editBtn);

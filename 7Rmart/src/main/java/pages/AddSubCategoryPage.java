@@ -62,8 +62,7 @@ public class AddSubCategoryPage {
 	    }
   
 	    public void uploadFile() throws AWTException
-		{
-				
+		{				
 	    	FileUploadUtility.fileUploadUsingSendkeys(fileUploadField,Constants.TESTDATA_IMAGE_FOR_ADD_SUBCATEGORY);
 	    	WaitUtility.waitForElement(driver, imagePreview);
 			System.out.println("Image added successfully");
