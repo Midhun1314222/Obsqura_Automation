@@ -69,12 +69,12 @@ public class ManagePage {
 	{
 			
     	FileUploadUtility.fileUploadUsingSendkeys(chooseImage,Constants.TESTDATA_IMAGE_FOR_MANAGE_PAGE);
-    	WaitUtility.waitForElement(driver, imagePreview);
+    	WaitUtility.waitForElement(imagePreview);
 		System.out.println("Image added successfully");
 	}
 
     public void clickOnSubmitBtn() {
-        PageUtility.clickElementByJS(driver, submitBtn);
+        PageUtility.clickElementByJS(submitBtn);
     }
     
     public boolean isManagePageLoaded() {

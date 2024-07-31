@@ -74,7 +74,7 @@ public class EditContactPage {
 	    }
 
 	    public void clickOnSubmitButton() {
-	        PageUtility.clickElementByJS(driver, submitButton);
+	        PageUtility.clickElementByJS(submitButton);
 	    }
 
 	    public boolean isContactEdited() {

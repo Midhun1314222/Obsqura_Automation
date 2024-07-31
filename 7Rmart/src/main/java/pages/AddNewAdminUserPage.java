@@ -51,7 +51,7 @@ public class AddNewAdminUserPage {
 	    }
 
 	    public void clickOnSaveBtn() {
-	        PageUtility.clickElementByJS(driver, saveBtn);
+	        PageUtility.clickElementByJS(saveBtn);
 	    }
 
 	    public boolean isUserAddedSuccess() {

@@ -52,7 +52,7 @@ public class EditCategoryPage {
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        PageUtility.clickElementByJS(driver, submitBtn);
+	        PageUtility.clickElementByJS(submitBtn);
 	    }
 	    public boolean isCategoryEdited() {
 	    	boolean isEditCategorySuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);

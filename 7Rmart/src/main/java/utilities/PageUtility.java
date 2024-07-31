@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
+	static WebDriver driver;
 	
 	public static void selectByValue(WebElement element,String value) {
 		Select select =new Select(element);
@@ -17,7 +18,7 @@ public class PageUtility {
 	        element.sendKeys(value);
 	    }
 	
-	 public static void clickElementByJS(WebDriver driver, WebElement element) {
+	 public static void clickElementByJS(WebElement element) {
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript("arguments[0].click();", element);
 	    }
@@ -26,11 +27,11 @@ public class PageUtility {
 	        element.click();
 	    }
 	 
-	 public static void acceptAlert(WebDriver driver) {
+	 public static void acceptAlert() {
 	        driver.switchTo().alert().accept();
 	    }
 	 
-	 public static void actionClick(WebDriver driver,WebElement element)
+	 public static void actionClick(WebElement element)
 		{
 			Actions actions = new Actions(driver);
 			actions.contextClick(element);

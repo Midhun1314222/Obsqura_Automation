@@ -25,7 +25,7 @@ public class AdminUserChangeStatusPage {
 	    }
 
 	    public void clickOnActionBtn() {
-	        PageUtility.clickElementByJS(driver, actionBtn);
+	        PageUtility.clickElementByJS(actionBtn);
 	    }
 
 	    public boolean isStatusChangedSuccess() {

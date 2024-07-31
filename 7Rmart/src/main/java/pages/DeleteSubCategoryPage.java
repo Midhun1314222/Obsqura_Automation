@@ -33,7 +33,7 @@ public class DeleteSubCategoryPage {
 
 	    public void clickOnDeleteButton() {
 	    	 PageUtility.click(deleteBtn);
-	         PageUtility.acceptAlert(driver);
+	         PageUtility.acceptAlert();
 	    }
 
 	    public boolean isSubcategoryPageDeleted() {

@@ -6,8 +6,7 @@ public class Constants {
 public static final String CONFIGFILE=System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"config.properties";
 public static final String TestDataFile=System.getProperty("user.dir")+"//src//test//resources//TestData.xlsx";
 public static final String TESTDATA_IMAGE_FOR_MANAGE_PAGE=System.getProperty("user.dir")+"\\src\\test\\resources\\phone.jpg";
-public static final String TESTDATA_IMAGE_FOR_ADD_SUBCATEGORY=System.getProperty("user.dir")+"\\src\\test\\resources\\tomatos.jpeg";
-public static final String TESTDATA_IMAGE_FOR_EDIT_CATEGORY=System.getProperty("user.dir")+"\\src\\test\\resources\\tomatos.jpeg";
+public static final String TESTDATA_IMAGE_FOR_ADD_SUBCATEGORY=System.getProperty("user.dir")+"\\src\\test\\resources\\car.jpeg";
 public static final String LOGINPAGE="Login";
 public static final String ADD_ADMIN_USER_DATA="AddAdminUserData";
 public static final String ADD_MANAGE_PAGE_DATA="AddNewManagePageData";
