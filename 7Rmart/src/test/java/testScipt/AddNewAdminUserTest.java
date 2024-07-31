@@ -35,7 +35,6 @@ public class AddNewAdminUserTest extends Base {
 	        String newPassword=firstname+"."+lastname;
 	        String newUserType = ExcelUtility.getStringData(1, 2,Constants.ADD_ADMIN_USER_DATA);
 
-
 	        addNewAdminUserPage.enterUserName(newUserName);
 	        addNewAdminUserPage.enterPassword(newPassword);
 	        addNewAdminUserPage.selectUserType(newUserType);
