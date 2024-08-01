@@ -39,7 +39,7 @@ public class EditContactPage {
 		}
 
 	    public void clickOnActionButton() {
-	        PageUtility.click(actionBtn);
+	    	actionBtn.click();
 	    }
 	    
 	    public boolean isContactUsInformationTextDisplayed()
