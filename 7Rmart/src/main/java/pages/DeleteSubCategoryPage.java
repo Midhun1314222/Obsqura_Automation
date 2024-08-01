@@ -22,8 +22,7 @@ public class DeleteSubCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement deleteSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
-	        PageUtility.click(subCategoryLink);
-	    }
+	    	subCategoryLink.click();	    }
 	    
 	    public boolean isListSubcategoryTextVisible()
 		{
@@ -32,8 +31,8 @@ public class DeleteSubCategoryPage {
 		}
 
 	    public void clickOnDeleteButton() {
-	    	 PageUtility.click(deleteBtn);
-	         PageUtility.acceptAlert();
+	    	deleteBtn.click();
+	    	PageUtility.acceptAlert();
 	    }
 
 	    public boolean isSubcategoryPageDeleted() {

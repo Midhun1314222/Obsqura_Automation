@@ -26,7 +26,7 @@ public class LoginPage {
         PageUtility.sendKeys(password, passwordVal);
 	}
 	public void clickOnSignInButton() {
-        PageUtility.click(signin);
+		signin.click();
 	}
     public boolean isHomePageLoaded() {
 	return dashboard.isDisplayed();

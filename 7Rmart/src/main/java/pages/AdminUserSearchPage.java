@@ -24,8 +24,7 @@ public class AdminUserSearchPage {
 	    @FindBy(xpath = "//button[@value='sr']")private WebElement findUserBtn;
 
 	    public void clickOnAdminUsersBtn() {
-	        PageUtility.click(adminUsersBtn);
-	    }
+	    	adminUsersBtn.click();	    }
 	    
 	    public boolean isAdminUserHeaderDisplayed()
 		{
@@ -34,8 +33,7 @@ public class AdminUserSearchPage {
 		}
 
 	    public void clickOnSearchBtn() {
-	        PageUtility.click(searchBtn);
-	    }
+	    	searchBtn.click();	    }
 
 	    public void enterUserName(String userName) {
 	        PageUtility.clearAndSendKeys(userNameField, userName);
@@ -47,7 +45,6 @@ public class AdminUserSearchPage {
 	    }
 
 	    public void clickOnFindUserBtn() {
-	        PageUtility.click(findUserBtn);
-	    }
+	    	findUserBtn.click();	    }
 	  
 }

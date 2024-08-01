@@ -21,8 +21,7 @@ public class AdminUserChangeStatusPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement changeStatusSuccess;
 
 	    public void clickOnAdminUsersBtn() {
-	        PageUtility.click(adminUsersBtn);
-	    }
+	    	adminUsersBtn.click();	    }
 
 	    public void clickOnActionBtn() {
 	        PageUtility.clickElementByJS(actionBtn);

@@ -33,8 +33,7 @@ public class AddSubCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addSubCategorySuccess;
 
 	    public void clickOnSubCategoryLink() {
-	    	PageUtility.click(subCategoryLink);
-	    }
+	    	subCategoryLink.click();	    }
 	    public boolean isListSubcategoryTextVisible()
 		{
 			boolean islistSubcategoriesTextAvailable=WebElementsUtility.isElementDisplayed(listSubcategoriesText);
@@ -42,8 +41,7 @@ public class AddSubCategoryPage {
 		}
 
 	    public void clickOnCreateNewButton() {
-	        PageUtility.click(createNewBtn);
-	    }
+	    	createNewBtn.click();	    }
 	    
 	    public boolean isAddSubCategoryTextVisible()
 	    {

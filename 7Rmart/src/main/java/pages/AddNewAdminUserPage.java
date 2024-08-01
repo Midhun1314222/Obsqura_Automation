@@ -25,8 +25,7 @@ public class AddNewAdminUserPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement addUserSuccess;
 
 	    public void clickOnAdminUsersBtn() {
-	        PageUtility.click(adminUsersBtn);
-	    }
+	    	adminUsersBtn.click();	    }
 	    
 	    public boolean isAdminUserInformationsHeaderDisplayed()
 		{
@@ -35,8 +34,7 @@ public class AddNewAdminUserPage {
 		}
 
 	    public void clickOnAddNewBtn() {
-	        PageUtility.click(addNewBtn);
-	    }
+	    	addNewBtn.click();	    }
 
 	    public void enterUserName(String userName) {
 	        PageUtility.sendKeys(userNameField, userName);

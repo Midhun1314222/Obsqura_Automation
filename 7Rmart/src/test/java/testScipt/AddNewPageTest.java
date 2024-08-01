@@ -24,6 +24,7 @@ public class AddNewPageTest extends Base {
 	        loginPage.clickOnSignInButton();	    
 
 	        ManagePage managePage = new ManagePage(driver);
+	        
 	        managePage.clickOnManagePageBtn();
 			boolean is_new_button_available=managePage.isNewButtonVisible();
 			

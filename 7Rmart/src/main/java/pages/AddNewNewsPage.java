@@ -25,8 +25,7 @@ public class AddNewNewsPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
 
 	    public void clickOnManageNewsBtn() {
-	        PageUtility.click(manageNewsBtn);
-	    }
+	    	manageNewsBtn.click();	    }
 	    
 	    public boolean isManageNewsHeaderDisplayed()
 		{
@@ -35,8 +34,7 @@ public class AddNewNewsPage {
 		}
 
 	    public void clickOnAddNewNewsBtn() {
-	        PageUtility.click(addNewNewsBtn);
-	    }
+	    	addNewNewsBtn.click();	    }
 	    
 	    public boolean isenterNewsInformationHeaderDisplayed()
 		{
@@ -49,8 +47,7 @@ public class AddNewNewsPage {
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        PageUtility.click(submitBtn);
-	    }
+	    	submitBtn.click();	    }
 
 	    public boolean isNewsAddedSuccessfully() {
 	    	boolean isAddNewsSuccessAlertDisplayed=WebElementsUtility.isElementDisplayed(successMessage);

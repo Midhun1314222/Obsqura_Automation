@@ -26,8 +26,7 @@ public class EditCategoryPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
 
 	    public void clickOnCategoryBtn() {
-	        PageUtility.click(categoryBtn);
-	    }
+	    	categoryBtn.click();	    }
 	    
 	    public boolean isEditCategoriesHeaderDisplayed()
 		{
@@ -36,7 +35,7 @@ public class EditCategoryPage {
 		}
 
 	    public void clickOnEditBtn() {
-	        PageUtility.click(editBtn);
+	    	editBtn.click();
 	    }
 
 	    public void enterEditedCategory(String categoryName) {
@@ -44,11 +43,11 @@ public class EditCategoryPage {
 	    }	   
 
 	    public void clickOnShowOnTopRadioBtn() {
-	        PageUtility.click(showOnTopRadioBtn);
+	    	showOnTopRadioBtn.click();
 	    }
 
 	    public void clickOnShowOnLeftRadioBtn() {
-	        PageUtility.click(showOnLeftRadioBtn);
+	    	showOnLeftRadioBtn.click();
 	    }
 
 	    public void clickOnSubmitBtn() {

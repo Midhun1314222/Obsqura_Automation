@@ -29,7 +29,7 @@ public class EditContactPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement editContactSuccess;
 
 	    public void clickOnMoreInfoButton() {
-	        PageUtility.click(moreInfoBtn);
+	    	moreInfoBtn.click();
 	    }
 	    
 	    public boolean isContactUsHeaderDisplayed()

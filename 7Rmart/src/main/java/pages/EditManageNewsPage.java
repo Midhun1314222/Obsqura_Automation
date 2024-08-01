@@ -25,7 +25,7 @@ public class EditManageNewsPage {
 	    @FindBy(xpath = "//div[contains(@class,'alert-success')]")private WebElement successMessage;
 
 	    public void clickOnManageNewsBtn() {
-	        PageUtility.click(manageNewsBtn);
+	    	manageNewsBtn.click();
 	    }
 	    
 	    public boolean isManageNewsHeaderDisplayed()
@@ -35,7 +35,7 @@ public class EditManageNewsPage {
   		}
 
 	    public void clickOnEditBtn() {
-	        PageUtility.click(editBtn);
+	    	editBtn.click();
 	    }
 	    
 	    public boolean isHeaderEnterNewsInformationDisplayed()
@@ -49,7 +49,7 @@ public class EditManageNewsPage {
 	    }
 
 	    public void clickOnSubmitBtn() {
-	        PageUtility.click(submitBtn);
+	    	submitBtn.click();
 	    }
 
 	    public boolean isNewsEditedSuccessfully() {

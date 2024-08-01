@@ -34,7 +34,7 @@ public class ManagePage {
     @FindBy(xpath = "//div[contains(@class,'alert-success')]")WebElement successMessage;
 
     public void clickOnManagePageBtn() {
-        PageUtility.click(managePageBtn);
+    	managePageBtn.click();
     }
     
     public boolean isNewButtonVisible()
@@ -44,7 +44,7 @@ public class ManagePage {
 	}
 
     public void clickOnCreateNewBtn() {
-        PageUtility.click(createNewBtn);
+    	createNewBtn.click();
     }
     
     public boolean isEnterPageInformationsHeaderDisplayed()
