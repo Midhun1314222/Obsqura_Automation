@@ -27,8 +27,7 @@ public class DeleteSubCategoryTest extends Base {
 
         deleteSubcategoryPage.clickOnSubCategoryLink();
 		boolean isListSubcategoryTextloaded= deleteSubcategoryPage.isListSubcategoryTextVisible();
-
-        
+       
         deleteSubcategoryPage.clickOnDeleteButton();
         boolean isSubcategoryPageDeletedSuccess = deleteSubcategoryPage.isSubcategoryPageDeleted();
         

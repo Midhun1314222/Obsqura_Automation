@@ -53,7 +53,7 @@ public class Base {
         if(result.getStatus() == ITestResult.FAILURE) {
             takesScreenshot(result);
         }
-        //driver.close();
+        driver.close();
     }
 
     public void takesScreenshot(ITestResult result) throws IOException {

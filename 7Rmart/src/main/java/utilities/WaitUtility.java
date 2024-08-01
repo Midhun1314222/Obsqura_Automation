@@ -37,7 +37,7 @@ public class WaitUtility {
 		 wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
 	
-	public static void fluentWaitForElement(WebElement target) {
+	public static void waitForElementToBeDisplayed(WebElement target) {
 	    FluentWait<WebDriver> wait = new FluentWait<>(driver)
 	            .withTimeout(Duration.ofSeconds(FLUENT_WAIT_TIMEOUT))
 	            .pollingEvery(Duration.ofSeconds(FLUENT_WAIT_POLLING))
@@ -50,7 +50,7 @@ public class WaitUtility {
 	    });
 	}
 	
-	public static void fluentWaitForElementToBeSelected(WebElement element) {
+	public static void verifyWaitForElementToBeSelected(WebElement element) {
 	    FluentWait<WebDriver> wait = new FluentWait<>(driver)
 	            .withTimeout(Duration.ofSeconds(FLUENT_WAIT_TIMEOUT))
 	            .pollingEvery(Duration.ofSeconds(FLUENT_WAIT_POLLING))
